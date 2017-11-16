@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Seravo Plugin 1.6.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/seravo-plugin\n"
-"POT-Creation-Date: 2017-10-11 12:17:16+00:00\n"
+"POT-Creation-Date: 2017-11-16 17:40:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,6 +40,22 @@ msgstr ""
 
 #: lib/backups-page.php:18
 msgid "Make a new backup"
+msgstr ""
+
+#: lib/cruftfiles-page.php:3
+msgid "Cruft Files (beta)"
+msgstr ""
+
+#: lib/cruftfiles-page.php:5
+msgid "Find and delete unnecessary files in the filesystem"
+msgstr ""
+
+#: lib/cruftfiles-page.php:12
+msgid "Finding files..."
+msgstr ""
+
+#: lib/cruftfiles-page.php:16
+msgid "Note! Deleted files cannot be undeleted."
 msgstr ""
 
 #: lib/domains-dns.php:13
@@ -271,6 +287,22 @@ msgid ""
 "user-manual/web-publishing/https-for-wordpress/\">use https</a>."
 msgstr ""
 
+#: modules/cruftfiles.php:24 modules/cruftfiles.php:25
+msgid "Cruft Files"
+msgstr ""
+
+#: modules/cruftfiles.php:54 modules/tests.php:37
+msgid "No data returned for section."
+msgstr ""
+
+#: modules/cruftfiles.php:55
+msgid "Are you sure you want to proceed? Deleted files can not be recovered."
+msgstr ""
+
+#: modules/cruftfiles.php:56 modules/tests.php:40
+msgid "Failed to load. Please try again."
+msgstr ""
+
 #: modules/instance-switcher.php:98
 msgid "Now in"
 msgstr ""
@@ -403,20 +435,12 @@ msgstr ""
 msgid "The cache was flushed"
 msgstr ""
 
-#: modules/tests.php:37
-msgid "No data returned for section."
-msgstr ""
-
 #: modules/tests.php:38
 msgid "Tests run succesfully without errors!"
 msgstr ""
 
 #: modules/tests.php:39
 msgid "At least one test failed."
-msgstr ""
-
-#: modules/tests.php:40
-msgid "Failed to load. Please try again."
 msgstr ""
 
 #: modules/tests.php:41
