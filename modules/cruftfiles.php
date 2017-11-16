@@ -16,6 +16,7 @@ if ( ! class_exists('Cruftfiles') ) {
           require_once(dirname( __FILE__ ) . '/../lib/cruftfiles-ajax.php');
           wp_die();
       });
+      add_action( 'wp_ajax_seravo_delete_file', array( __CLASS__, 'ajax_delete_file' ) );
     }
 
     public static function register_cruftfiles_page() {
@@ -24,6 +25,17 @@ if ( ! class_exists('Cruftfiles') ) {
 
     public static function load_cruftfiles_page() {
       require_once(dirname( __FILE__ ) . '/../lib/cruftfiles-page.php');
+    }
+
+    public static function ajax_delete_file() {
+      if ( isset($_POST['deletefile']) && ! empty($_POST['deletefile']) ) {
+        $file = $_POST['deletefile'];
+        $result = array();
+        $unlink_result = unlink($file);
+        $result['success'] = (bool) $unlink_result;
+        echo json_encode($result);
+      }
+      wp_die();
     }
 
   }
