@@ -34,11 +34,22 @@ if ( ! class_exists('Cruftfiles') ) {
       if ( isset($_POST['deletefile']) && ! empty($_POST['deletefile']) ) {
         $file = $_POST['deletefile'];
         $result = array();
-        $unlink_result = unlink($file);
+        if (is_dir($file)) $unlink_result = Cruftfiles::rmdir_recursive($file, 0);
+        else $unlink_result = unlink($file);
         $result['success'] = (bool) $unlink_result;
         echo json_encode($result);
       }
       wp_die();
+    }
+
+    public static function rmdir_recursive($dir, $recursive) {
+      foreach(scandir($dir) as $file) {
+        if ('.' === $file || '..' === $file) continue;
+        if (is_dir("$dir/$file")) rmdir_recursive("$dir/$file", 1);
+        else unlink("$dir/$file");
+      }
+      rmdir($dir);
+      if ($recursive == 0) return true; // when not called recursively
     }
 
     public static function enqueue_cruftfiles_scripts( $hook ) {
